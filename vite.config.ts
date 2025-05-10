@@ -5,21 +5,32 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   base: '/sopadeletras/',
   plugins: [
-    react(),  // Añade el plugin de React que faltaba
-    tailwindcss()
+    react(),
+    tailwindcss() // Ahora usará tu tailwind.config.js
   ],
   server: {
     port: 5173,
-    host: true,  // Permite acceso desde otros dispositivos en la red local
-    open: true   // Abre el navegador automáticamente
+    host: true,
+    open: '/sopadeletras/' // Abre directamente en la ruta base
   },
   preview: {
-    port: 5173,
+    port: 4173, // Cambiado al puerto por defecto de preview
     host: true
   },
   build: {
     outDir: 'dist',
+    assetsDir: 'assets', // Directorio específico para assets
     emptyOutDir: true,
-    sourcemap: true  // Útil para debugging
+    sourcemap: true,
+    manifest: true, // Genera manifest.json para tracking de assets
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name]-[hash][extname]', // Estructura clara para assets
+        entryFileNames: 'assets/[name]-[hash].js'
+      }
+    }
+  },
+  css: {
+    devSourcemap: true // Sourcemaps para CSS en desarrollo
   }
 })
