@@ -4,11 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+   
+   
     "lint": "eslint .",
-    "preview": "vite preview",
+   
     "predeploy": "npm run build",
+    "dev": "vite --host 0.0.0.0",  
+    "preview": "vite preview --host 0.0.0.0 --port 5173", 
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
