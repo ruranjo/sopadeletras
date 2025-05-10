@@ -39,6 +39,7 @@ const LetterGridGenerator: React.FC<LetterGridProps> = ({ words, gridSize = 15 }
   return (
     <div className="max-w-4xl mx-auto p-4 md:p-6 font-sans">
       <h1 className="text-xl md:text-2xl font-bold text-center mb-4 md:mb-6">Generador de Sopa de Letras</h1>
+      <p className="text-center text-sm text-gray-500 mb-2">Hecho por GABRIEL MONSALVE</p>
       
       {/* Banner de palabras */}
       <div className="flex flex-wrap gap-2 mb-4 md:mb-6 p-3 md:p-4 bg-gray-100 rounded-lg justify-center">
@@ -103,7 +104,6 @@ const LetterGridGenerator: React.FC<LetterGridProps> = ({ words, gridSize = 15 }
 };
 
 export default LetterGridGenerator;
-
 
 /*
  <div className="flex flex-col md:flex-row gap-6 mb-8 hidden">
