@@ -11,7 +11,7 @@ export default defineConfig({
   server: {
     port: 5173,
     host: true,
-    open: '/sopadeletras/' // Abre directamente en la ruta base
+    open: '/sopadeletras' // Abre directamente en la ruta base
   },
   preview: {
     port: 4173, // Cambiado al puerto por defecto de preview
