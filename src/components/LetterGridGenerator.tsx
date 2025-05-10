@@ -5,15 +5,8 @@ import useLetterGridController from './controllers';
 const LetterGridGenerator: React.FC<LetterGridProps> = ({ words, gridSize = 15 }) => {
   const {
     grid,
-    inputWords,
-    newWord,
-    setNewWord,
-    handleAddWord,
-    handleRemoveWord,
-    handleReset,
     handleCellClick,
     selectedCells,
-    setSelectedCells
   } = useLetterGridController({ words, gridSize });
 
   const [foundWords, setFoundWords] = useState<Record<string, boolean>>(
